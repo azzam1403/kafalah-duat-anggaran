@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<title>ميزانية المذكرات – كفالة الدعاة</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2e7d32">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="application-name" content="Kafalah">
+<meta name="apple-mobile-web-app-title" content="Kafalah">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<style>
+:root{--bg:#f6f8f5;--card:#fff;--tx:#1b1f1b;--mut:#5f6b5f;--bd:#d9e0d6;--pri:#2e7d32;--priTx:#fff;--hd:#92d050;--neg:#c62828;--negBg:#fde8e8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121512;--card:#1c211c;--tx:#eef2ed;--mut:#9aa89a;--bd:#344034;--pri:#66bb6a;--priTx:#102010;--hd:#3d6b22;--neg:#ff8a80;--negBg:#3a1d1d;color-scheme:dark}}
+*{box-sizing:border-box}html,body{margin:0}body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--tx);font-size:15px;padding-bottom:84px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--pri);color:var(--priTx);padding:10px 14px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--pri);z-index:10}
+header h1{margin:0 0 6px;font-size:16px}
+select,input,textarea,button{font:inherit}
+header select{width:100%;padding:8px;border-radius:8px;border:0;background:var(--card);color:var(--tx)}
+main{padding:12px;max-width:760px;margin:0 auto}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px;margin-bottom:10px}
+.row{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.mut{color:var(--mut);font-size:13px}.neg{color:var(--neg)}.b{font-weight:bold}
+.bar{height:8px;border-radius:4px;background:var(--bd);overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:var(--pri)}
+.bar i.over{background:var(--neg)}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--card);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px);z-index:6}
+nav button{flex:1;border:0;background:none;color:var(--mut);padding:10px 2px;font-size:12px}
+nav button.on{color:var(--pri);font-weight:bold;border-top:3px solid var(--pri)}
+.btn{background:var(--pri);color:var(--priTx);border:0;border-radius:8px;padding:9px 14px;cursor:pointer}
+.btn.alt{background:transparent;color:var(--pri);border:1px solid var(--pri)}.btn.red{background:var(--neg);color:#fff}
+.seg{display:flex;gap:6px;margin-bottom:10px}.seg button{flex:1}
+[dir="ltr"] .fab{left:auto!important;right:16px}
+.fab{position:fixed;left:16px;bottom:calc(72px + env(safe-area-inset-bottom,0px));z-index:7;border-radius:50%;width:54px;height:54px;font-size:28px;padding:0;box-shadow:0 3px 8px #0004}
+dialog{border:1px solid var(--bd);border-radius:14px;background:var(--card);color:var(--tx);width:min(94vw,420px);padding:16px}
+dialog::backdrop{background:#0008}
+label{display:block;font-size:13px;color:var(--mut);margin:8px 0 3px}
+input,select.f,textarea{width:100%;padding:9px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--tx)}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px}
+th,td{border:1px solid var(--bd);padding:6px;text-align:center}th{background:var(--hd);color:var(--tx)}
+tr.tot td{background:var(--hd);font-weight:bold}tr.neg td{background:var(--negBg);color:var(--neg);font-weight:bold}
+h3{margin:14px 0 6px;font-size:14px}
+textarea.bk{height:90px;font-size:11px}
+.rtl{unicode-bidi:plaintext}
+.rh{background:var(--pri);color:var(--priTx);border-radius:10px;padding:14px;text-align:center}.rh1{font-size:22px;font-weight:bold}.rh2{font-size:13px;opacity:.9;margin-top:2px}
+.rinfo{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.rinfo div{background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:6px 10px}
+.rinfo span,.kpi span{display:block;font-size:11px;color:var(--mut)}
+.rname{text-align:center;font-weight:bold;font-size:15px;margin:6px 0 12px;line-height:1.7}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.kpi{border:1px solid var(--bd);border-radius:10px;padding:8px 4px;text-align:center}.kpi b{font-size:13px}
+.kpi.good{border-color:var(--pri)}.kpi.good b{color:var(--pri)}.kpi.bad{background:var(--negBg);border-color:var(--neg)}.kpi.bad b{color:var(--neg)}
+.sec{background:var(--hd);padding:7px 12px;border-radius:8px;margin:18px 0 8px;font-size:14px}
+.rpt table td.amt{white-space:nowrap;font-weight:bold}.t5 tr:nth-child(even) td{background:var(--bg)}.t5 tr.tot td{background:var(--hd)}.t5 td:nth-child(3){text-align:start}
+.tag{font-size:11px;color:var(--mut);font-weight:normal}
+.rf{text-align:center;color:var(--mut);font-size:11px;margin-top:18px;border-top:1px dashed var(--bd);padding-top:8px}
+.rtitle{text-align:center;font-weight:bold;font-size:17px;line-height:1.9;color:var(--pri);padding:12px 8px;margin-bottom:4px;border-top:3px double var(--pri);border-bottom:3px double var(--pri)}
+.sec{border-inline-start:6px solid var(--pri);border-radius:6px;font-size:14px;font-weight:bold}
+.rpt{--ln:#000}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rpt{--ln:#d5ddd5}}
+.rpt table{border-collapse:separate;border-spacing:0;border:1px solid var(--ln);border-radius:10px;overflow:hidden}
+.rpt th{background:var(--pri);color:var(--priTx);border:0;padding:9px 6px;font-size:12.5px}
+.rpt th:not(:last-child){border-inline-end:1px solid var(--ln)}
+.rpt td{border:0;border-bottom:1px solid var(--ln);padding:8px 6px}
+.rpt td:not(:last-child){border-inline-end:1px solid var(--ln)}
+.rpt tr:last-child td{border-bottom:0}
+.rpt td:first-child{color:var(--mut);width:34px}
+.rpt tr.tot td{background:var(--hd);border-top:2px solid var(--ln);font-weight:bold}
+.rpt tr.neg td{background:var(--negBg);color:var(--neg);font-weight:bold;border-top:2px solid var(--neg)}
+.rpt tr.tot td:first-child{color:var(--tx)}.rpt tr.neg td:first-child{color:var(--neg)}
+.rpt{background:#fff;color:#000;padding:10px;border-radius:8px;--ln:#000}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rpt{--ln:#000}}
+.rpt .rtitle{text-align:center;font-weight:bold;color:#000;font-size:16px;line-height:1.9;border:0;padding:4px 8px 8px;margin:0 0 6px}
+.rpt .sec{background:none;border:0;border-radius:0;padding:0;margin:14px 0 4px;font-size:14px;font-weight:bold;color:#000}
+.rpt table{border-radius:0;overflow:visible;border:1px solid #000}
+.rpt th{background:#92d050;color:#000;font-weight:bold;padding:6px 5px;font-size:13px}
+.rpt td{color:#000;padding:6px 5px}
+.rpt td:first-child{color:#000}
+.rpt .t5 tr:nth-child(even) td{background:transparent}
+.rpt .tag{color:#444}.rpt .mut{color:#444}
+.rpt table tr.tot td,.rpt .t5 tr.tot td{background:#92d050;color:#000;border-top:1px solid #000;font-weight:bold}
+.rpt tr.tot td:first-child{color:#000}
+.rpt tr.neg td,.rpt tr.neg td:first-child{background:#92d050;color:#9b0000;border-top:1px solid #000;font-weight:bold}
+.sh{display:flex;justify-content:space-between;background:#f8cbad;color:#000;font-weight:bold;border-radius:8px;padding:9px 12px;margin:14px 0 6px;cursor:pointer}
+.rpt .t5 tr.shd td{background:#f8cbad;color:#000;font-weight:bold;text-align:start}
+.rpt .t5 tr.sub td{background:#92d050;color:#000;font-weight:bold}
+.rpt tr.cr td:nth-child(3),.rpt tr.cr td:nth-child(4){background:var(--rc,transparent)}
+.rpt .lg{font-size:11px;margin-top:6px;color:#000}.rpt .lg i{display:inline-block;width:12px;height:12px;border:1px solid #000;vertical-align:middle;margin:0 8px 0 4px}
+.rpt table{border-collapse:collapse!important;border:0!important}
+.rpt th,.rpt td{border:1px solid #000!important}
+@media (min-width:900px){
+ body{padding-bottom:0;padding-inline-start:96px}
+ header{padding:12px 28px}
+ main{max-width:1100px;padding:22px 28px}
+ nav{top:0;bottom:0;left:auto;right:auto;inset-inline-start:0;width:96px;flex-direction:column;justify-content:flex-start;border-top:0;border-inline-end:1px solid var(--bd);padding-top:72px;gap:4px}
+ nav button{flex:none;padding:14px 4px;font-size:13px}
+ nav button.on{border-top:0;border-inline-start:4px solid var(--pri);background:var(--bg)}
+ #m.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px;align-items:start}
+ #m.g>.seg,#m.g>.sh,#m.g>#addm,#m.g>.card.row,#m.g>p{grid-column:1/-1}
+ #m.g>.card{margin-bottom:0}
+ #m.n{max-width:900px;margin:0 auto}
+ .rpt table{font-size:14px}
+ .fab{bottom:28px}
+}
+@media (max-width:420px){main{padding:8px}.rpt{padding:6px}.rpt table{font-size:11.5px}.rpt th,.rpt td{padding:5px 3px}}
+@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}tr{page-break-inside:avoid}.sec{page-break-after:avoid}header,nav,.fab,.noprint{display:none!important}body{background:#fff;padding:0}.card{border:0}body::before{display:none}}
+</style></head>
+<body>
+<header><div class="row"><h1 id="h1">كفالة الدعاة · ميزانية المذكرات</h1><span style="display:flex;gap:6px"><button class="btn" id="inst" hidden style="padding:4px 12px;background:#fff;color:#2e7d32">تثبيت</button><button class="btn" id="lng" style="padding:4px 12px;background:#fff;color:#2e7d32">Indonesia</button></span></div><select id="sel" aria-label="اختيار المذكرة"></select></header>
+<main id="m"></main>
+<button class="btn fab" id="fab" aria-label="إضافة">+</button>
+<nav id="nav"></nav>
+<dialog id="dlg"><form method="dialog" id="frm"></form></dialog>
+<script>
+const KEY="kd_anggaran_ar_v1";
+let lang;try{lang=localStorage.getItem("kd_lang")}catch(e){}if(lang!=="id")lang="ar";
+const ID={"تثبيت":"Pasang","حذف المذكرة وكل بياناتها؟":"Hapus memo beserta semua datanya?","انسخ النص أدناه كنسخة احتياطية، أو الصق نسخة سابقة ثم اضغط": "Salin teks di bawah sebagai cadangan, atau tempel cadangan sebelumnya lalu tekan", "إعادة البيانات إلى المثال؟ ستفقد البيانات الحالية": "Kembalikan ke data contoh? Data saat ini akan hilang", "البيانات محفوظة على هذا الجهاز فقط": "Data tersimpan di perangkat ini saja", "ميزانية مذكرات كفالة الدعاة": "Anggaran Memo Kafalah Duat", "رقم المذكرة فارغ أو مكرر": "No Memo kosong atau sudah ada", "المصروفات حسب الداعية": "Pengeluaran per Dai", "المصروفات حسب التصنيف": "Pengeluaran per Kategori", "صيغة النسخة غير صالحة": "Format cadangan tidak valid", "حذف هذه البيانات؟": "Hapus data ini?", "تم تحميل البيانات": "Data dimuat", "ميزانية المذكرات": "Anggaran Memo", "تفاصيل المصروفات": "Rincian Pengeluaran", "عجز في الميزانية": "Kekurangan dana", "أنشئ مذكرة أولاً": "Buat memo dulu", "ملخص الميزانيات": "Ringkasan Anggaran", "المذكرة المحددة": "Memo terpilih", "النسخ الاحتياطي": "Cadangan data", "تعديل اسم القسم": "Ubah nama bagian", "الصقها في جداول Google": "Tempel di Google Sheets", "نسخ لجداول Google": "Salin untuk Google Sheets", "اختيار المذكرة": "Pilih memo", "لا توجد بيانات": "Belum ada data", "لا توجد مذكرات": "Belum ada memo", "تعديل المذكرة": "Ubah memo", "جميع المذكرات": "Semua memo", "الرصيد الباقي": "Sisa saldo", "كفالة الدعاة": "Kafalah Duat", "نوع الفاتورة": "Jenis nota", "إجمالي الدعم": "Total Dukungan", "مذكرة جديدة": "Memo baru", "رقم المذكرة": "No Memo", "انسخ يدويًا": "Salin manual", "اسم النشاط": "Nama kegiatan", "يمكن هجري": "boleh Hijriah", "المصروفات": "Pengeluaran", "إعادة ضبط": "Reset", "اسم القسم": "Nama bagian", "الملاحظة": "Catatan", "بدون قسم": "Tanpa bagian", "بالروبية": "Jumlah (Rp)", "المذكرات": "Memo", "تم النسخ": "Tersalin", "مواصلات": "Transportasi", "مقدَّمة": "Diajukan", "التاريخ": "Tanggal", "المسؤول": "Penanggung jawab", "الداعية": "Dai", "التصنيف": "Kategori", "المصروف": "Keluar", "محدَّدة": "Terpilih", "للإضافة": "untuk menambah", "المجموع": "Jumlah", "التقرير": "Laporan", "الكفالة": "Kafalah", "مكافأة": "Honor Dai", "معتمدة": "Disetujui", "منتهية": "Selesai", "الحالة": "Status", "المشرف": "Musyrif", "البيان": "Keterangan", "المبلغ": "Jumlah", "الباقي": "Sisa", "اختيار": "Pilih", "متوازن": "Seimbang", "النسبة": "Persen", "تفاصيل": "Rincian", "الملخص": "Ringkasan", "إضافة": "Tambah", "جوائز": "Hadiah", "إقامة": "Akomodasi", "لوازم": "Perlengkapan", "مسودة": "Draft", "إلغاء": "Batal", "القسم": "Bagian", "روبية": "Rupiah", "تعديل": "Ubah", "الدعم": "Dukungan", "طباعة": "Cetak", "تحميل": "Muat", "تسجيل": "Catat", "طعام": "Konsumsi", "أخرى": "Lain-lain", "اضغط": "Tekan", "فائض": "Surplus", "ملخص": "Ringkasan", "حذف": "Hapus", "حفظ": "Simpan", "دعم": "dukungan", "مصروف": "pengeluaran", "سطر": "baris", "عام": "Umum", "نسخ": "Salin", "م": "No", "أ": "A", "ب": "B", "ج": "C", "د": "D"};
+const RX=new RegExp("(^|[^\\u0600-\\u06FF])("+Object.keys(ID).sort((a,b)=>b.length-a.length).map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("|")+")(?![\\u0600-\\u06FF])","g");
+const X=h=>{h=String(h);if(lang!=="id")return h.replace(/[\uE000\uE001]/g,"");return h.split(/(\uE000[\s\S]*?\uE001)/).map((q,i)=>i%2?q.slice(1,-1):q.replace(RX,(m,p,k)=>p+ID[k])).join("")};
+const mk=s=>"\uE000"+String(s??"")+"\uE001";
+const al=m=>alert(X(m)),cf=m=>confirm(X(m));
+const CATS=["طعام","مواصلات","جوائز","إقامة","لوازم","مكافأة","أخرى"];
+const STAT=["مسودة","مقدَّمة","معتمدة","منتهية"];
+const D="18 جمادى الأولى";
+const seed=()=>({sel:"MEMO-001",
+memos:[{id:"MEMO-001",name:"السفر الدعوي في مسجد الإمام الشافعي بتبينغ تينغي لعام 1448 هـ",date:D+" 1448",pj:"",status:"منتهية"}],
+sup:[{id:"s1",memo:"MEMO-001",date:D,desc:"الدخل الأول",amt:500000,note:""}],
+exp:[["الغداء",0,69000,""],["جوائز المحاضرة للمشاركين",2,60000,"BON KHUSUS"],["الوجبة الخفيفة",0,41300,""],["الوجبة الخفيفة",0,75000,""],["الوجبة الخفيفة",0,55200,""],["أجرة الطريق السريع",1,100000,""],["العشاء",0,215000,""],["العشاء",0,25000,""]].map((e,i)=>({id:"e"+i,memo:"MEMO-001",date:D,desc:e[0],cat:CATS[e[1]],amt:e[2],note:e[3]}))});
+let S;try{S=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!S||!S.memos)S=seed();
+let tab="memo",sub="exp";
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const $=s=>document.querySelector(s);
+const L=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const esc=s=>mk(L(s));
+const rp=n=>"\u202a"+(n<0?"-":"")+"Rp"+Math.abs(Math.round(n)).toLocaleString("id-ID")+"\u202c";
+const uid=()=>Math.random().toString(36).slice(2,9);
+const tot=(a,m)=>a.filter(x=>m==null||x.memo===m).reduce((s,x)=>s+(+x.amt||0),0);
+const memo=()=>S.memos.find(m=>m.id===S.sel);
+const BONS=["","Bon Asli","Bon Khusus"];
+const CCOL={};
+const secs=l=>{const g=[];l.forEach(x=>{const k=x.sec||"";let q=g.find(z=>z.k===k);if(!q){q={k,l:[]};g.push(q)}q.l.push(x)});return g};
+const secList=()=>[...new Set(S.exp.filter(x=>x.memo===S.sel).map(x=>x.sec).filter(Boolean))];
+const lastSec=()=>{const l=S.exp.filter(x=>x.memo===S.sel&&x.sec);return l.length?l[l.length-1].sec:""};
+
+function form(title,fields,vals,onSave,onDel){
+ const f=$("#frm");
+ f.innerHTML=`<h3 style="margin-top:0">${title}</h3>`+fields.map(x=>`<label>${x.l}</label>`+(x.opts?`<select class="f" name="${x.k}">${x.opts.map(o=>`<option value="${esc(o)}" ${vals[x.k]===o?"selected":""}>${L(o)}</option>`).join("")}</select>`:`<input dir="auto" name="${x.k}" type="${x.t||"text"}" value="${esc(vals[x.k]??"")}" ${x.t==="number"?'inputmode="numeric"':""} ${x.dl?'list="dl_'+x.k+'"':""}>${x.dl?`<datalist id="dl_${x.k}">${x.dl.map(o=>`<option value="${esc(o)}">`).join("")}</datalist>`:""}`)).join("")+
+ `<div class="row" style="margin-top:14px"><button class="btn alt" value="x">إلغاء</button>${onDel?'<button class="btn red" type="button" id="del">حذف</button>':""}<button class="btn" type="button" id="ok">حفظ</button></div>`;
+ f.innerHTML=X(f.innerHTML);
+ $("#ok").onclick=()=>{const o={};fields.forEach(x=>{const v=f.elements[x.k].value;o[x.k]=x.t==="number"?(+v||0):v.trim()});onSave(o);$("#dlg").close();save();render()};
+ if(onDel)$("#del").onclick=()=>{if(cf("حذف هذه البيانات؟")){onDel();$("#dlg").close();save();render()}};
+ $("#dlg").showModal();
+}
+const nextId=()=>{let n=S.memos.length+1,id;do{id="MEMO-"+String(n++).padStart(3,"0")}while(S.memos.some(m=>m.id===id));return id};
+
+function editMemo(m){
+ const nw=!m;m=m||{id:nextId(),name:"",date:"",pj:"",status:STAT[0]};
+ form(nw?"مذكرة جديدة":"تعديل المذكرة",[{k:"id",l:"رقم المذكرة"},{k:"name",l:"اسم النشاط"},{k:"date",l:"التاريخ (يمكن هجري)"},{k:"pj",l:"المسؤول"},{k:"status",l:"الحالة",opts:STAT}],m,o=>{
+  if(!o.id||(nw&&S.memos.some(x=>x.id===o.id))){al("رقم المذكرة فارغ أو مكرر");return}
+  if(!nw&&o.id!==m.id){S.sup.concat(S.exp).forEach(x=>{if(x.memo===m.id)x.memo=o.id});if(S.sel===m.id)S.sel=o.id}
+  if(nw){S.memos.push(o);S.sel=o.id}else Object.assign(m,o)},
+  nw?null:()=>{S.memos=S.memos.filter(x=>x!==m);S.sup=S.sup.filter(x=>x.memo!==m.id);S.exp=S.exp.filter(x=>x.memo!==m.id);S.sel=S.memos[0]?.id||""});
+}
+function editRow(kind,r){
+ const nw=!r,arr=kind==="sup"?S.sup:S.exp;
+ r=r||{id:uid(),memo:S.sel,date:(memo()||{}).date||"",desc:"",cat:CATS[0],amt:0,note:"",sec:lastSec(),bon:""};
+ const fs=[{k:"date",l:"التاريخ"}];
+ if(kind==="exp")fs.push({k:"sec",l:"القسم (الداعية / المشرف)",dl:secList()});
+ fs.push({k:"desc",l:"البيان"});
+ if(kind==="exp")fs.push({k:"cat",l:"التصنيف",opts:CATS},{k:"bon",l:"نوع الفاتورة",opts:BONS});
+ fs.push({k:"amt",l:"المبلغ (روبية)",t:"number"},{k:"note",l:"الملاحظة"});
+ form((nw?"إضافة ":"تعديل ")+(kind==="sup"?"دعم":"مصروف"),fs,r,o=>{Object.assign(r,o);if(nw)arr.push(r)},nw?null:()=>{arr.splice(arr.indexOf(r),1)});
+}
+
+function vMemo(){
+ return S.memos.map(m=>{const a=tot(S.sup,m.id),b=tot(S.exp,m.id),p=a?Math.min(100,b/a*100):(b?100:0);
+ return `<div class="card" data-m="${esc(m.id)}"><div class="row"><span class="b">${esc(m.id)}</span><span class="mut">${L(m.status)}</span></div>
+ <div class="rtl" style="margin:6px 0">${esc(m.name)}</div><div class="mut">${esc(m.date)} ${m.pj?"· المسؤول: "+esc(m.pj):""}</div>
+ <div class="bar"><i class="${b>a?"over":""}" style="width:${p}%"></i></div>
+ <div class="row mut"><span>الدعم ${rp(a)}</span><span>المصروف ${rp(b)}</span></div>
+ <div class="row b ${a-b<0?"neg":""}"><span>الباقي</span><span>${rp(a-b)}</span></div>
+ <div class="row noprint" style="margin-top:8px"><button class="btn alt" data-pick="${esc(m.id)}">${m.id===S.sel?"✓ محدَّدة":"اختيار"}</button><button class="btn alt" data-edit="${esc(m.id)}">تعديل</button><button class="btn red" data-delm="${esc(m.id)}">حذف</button></div></div>`}).join("")
+ +`<button class="btn" id="addm" style="width:100%">+ مذكرة جديدة</button>`;
+}
+function vEntri(){
+ const arr=(sub==="sup"?S.sup:S.exp).filter(x=>x.memo===S.sel);
+ return `<div class="seg"><button class="btn ${sub==="sup"?"":"alt"}" data-sub="sup">الدعم</button><button class="btn ${sub==="exp"?"":"alt"}" data-sub="exp">المصروفات</button></div>
+ <div class="card row"><span class="mut">${esc(S.sel)} · ${arr.length} سطر</span><span class="b">${rp(tot(arr))}</span></div>`+
+ (()=>{const cd=x=>`<div class="card" data-row="${x.id}" ${sub==="exp"&&CCOL[x.cat]?`style="border-inline-start:8px solid ${CCOL[x.cat]}"`:""}><div class="row"><span class="rtl b">${esc(x.desc)}</span><span class="b">${rp(x.amt)}</span></div>
+ <div class="mut rtl">${esc(x.date)}${x.cat?" · "+L(x.cat):""}${x.bon?" · "+esc(x.bon):""}${x.note?" · "+esc(x.note):""}</div>
+ <div class="row noprint" style="justify-content:flex-end;gap:8px;margin-top:8px"><button class="btn alt" data-edrow="${x.id}">تعديل</button><button class="btn red" data-delrow="${x.id}">حذف</button></div></div>`;
+ if(!arr.length)return `<p class="mut">لا توجد بيانات. اضغط + للإضافة.</p>`;
+ if(sub==="exp"&&arr.some(x=>x.sec))return secs(arr).map(g=>`<div class="sh" data-sec="${esc(g.k)}"><span>${g.k?esc(g.k):"بدون قسم"} ✎</span><span>${rp(tot(g.l))}</span></div>`+g.l.map(cd).join("")).join("");
+ return arr.map(cd).join("")})();
+}
+function report(){
+ const m=memo()||{},su=S.sup.filter(x=>x.memo===S.sel),ex=S.exp.filter(x=>x.memo===S.sel),a=tot(su),b=tot(ex);
+ const head=`<tr><th>م</th><th>التاريخ</th><th>البيان</th><th>بالروبية</th><th>الملاحظة</th></tr>`;
+ const rows=(l,c)=>l.length?l.map((x,i)=>`<tr><td>${i+1}</td><td>${esc(x.date)}</td><td>${esc(x.desc)}${c&&x.cat?`<div class="tag">${esc(x.cat)}</div>`:""}</td><td class="amt">${rp(x.amt)}</td><td>${esc(x.note)}</td></tr>`).join(""):`<tr><td colspan="5" class="mut">لا توجد بيانات</td></tr>`;
+ const multi=ex.some(x=>x.sec),gs=secs(ex);
+ const exRows=()=>!ex.length?`<tr><td colspan="5" class="mut">لا توجد بيانات</td></tr>`:gs.map(q=>(multi?`<tr class="shd"><td colspan="5">${(q.k?esc(q.k):"عام")}</td></tr>`:"")+q.l.map((x,i)=>`<tr class="cr"${CCOL[x.cat]?` style="--rc:${CCOL[x.cat]}"`:""}><td>${i+1}</td><td>${esc(x.date)}</td><td>${esc(x.desc)}</td><td class="amt">${rp(x.amt)}</td><td>${esc([x.bon,x.note].filter(Boolean).join(" · "))}</td></tr>`).join("")+(multi?`<tr class="sub"><td colspan="3">المجموع</td><td class="amt">${rp(tot(q.l))}</td><td></td></tr>`:"")).join("");
+ const lg=ex.some(x=>CCOL[x.cat])?`<div class="lg"><i style="background:#ffff00"></i>مواصلات / إقامة <i style="background:#00ffff"></i>طعام <i style="background:#00ff00"></i>مكافأة</div>`:"";
+ const pct=a?Math.min(100,b/a*100):(b?100:0),pt=a?Math.round(b/a*100)+"%":"—";
+ const bc={};ex.forEach(x=>{const k=x.cat||"أخرى";bc[k]=(bc[k]||0)+(+x.amt||0)});
+ const cl=Object.entries(bc).sort((p,q)=>q[1]-p[1]);
+ let hd="";try{hd=new Date().toLocaleDateString("ar-SA-u-ca-islamic-umalqura-nu-latn",{day:"numeric",month:"long",year:"numeric"})+" · "}catch(e){}
+ const gd=new Date().toLocaleDateString("ar-u-nu-latn",{day:"numeric",month:"long",year:"numeric"});
+ return {m,su,ex,a,b,html:`<div class="rpt"><div class="rtitle">كفالة الدعاة – ${esc(m.name)}</div>
+ <h3 class="sec">أ. إجمالي الدعم</h3><div class="tw"><table class="t5">${head}${rows(su)}<tr class="tot"><td colspan="3">المجموع</td><td class="amt">${rp(a)}</td><td></td></tr></table></div>
+ <h3 class="sec">ب. تفاصيل المصروفات</h3><div class="tw"><table class="t5">${head}${exRows()}<tr class="tot"><td colspan="3">المجموع</td><td class="amt">${rp(b)}</td><td></td></tr></table></div>${lg}
+ <h3 class="sec">ج. ملخص الميزانيات</h3><table><tr><th>م</th><th colspan="2">البيان</th><th>بالروبية</th><th>الملاحظة</th></tr>
+ <tr><td>1</td><td colspan="2">المجموع (المصروفات)</td><td>${rp(b)}</td><td></td></tr><tr><td>2</td><td colspan="2">الدعم</td><td>${rp(a)}</td><td></td></tr>
+ <tr class="${a-b<0?"neg":"tot"}"><td colspan="3">الباقي</td><td>${rp(a-b)}</td><td></td></tr></table>
+ ${multi?`<h3 class="sec">د. المصروفات حسب الداعية / المشرف</h3><table><tr><th>م</th><th colspan="2">القسم</th><th>بالروبية</th><th>النسبة</th></tr>`+gs.map((q,i)=>`<tr><td>${i+1}</td><td colspan="2">${(q.k?esc(q.k):"عام")}</td><td class="amt">${rp(tot(q.l))}</td><td>${b?Math.round(tot(q.l)/b*100):0}%</td></tr>`).join("")+`<tr class="tot"><td colspan="3">المجموع</td><td class="amt">${rp(b)}</td><td></td></tr></table>`:""}
+</div>`};
+}
+function tsv(){
+ const r=report(),L=[["كفالة الدعاة – "+mk(r.m.name||"")],[],["أ. إجمالي الدعم"],["م","التاريخ","البيان","المبلغ","الملاحظة"]];
+ r.su.forEach((x,i)=>L.push([i+1,mk(x.date),mk(x.desc),x.amt,mk(x.note)]));L.push(["","","المجموع",r.a],[],["ب. تفاصيل"],["م","التاريخ","البيان","المبلغ","الملاحظة","التصنيف"]);
+ {const mu=r.ex.some(x=>x.sec);secs(r.ex).forEach(q=>{if(mu)L.push([q.k?mk(q.k):"عام"]);q.l.forEach((x,i)=>L.push([i+1,mk(x.date),mk(x.desc),x.amt,mk([x.bon,x.note].filter(Boolean).join(" · ")),x.cat]));if(mu)L.push(["","","المجموع",tot(q.l)])})}L.push(["","","المجموع",r.b],[],["ج. ملخص"],["","المصروفات",r.b],["","الدعم",r.a],["","الباقي",r.a-r.b]);
+ return X(L.map(l=>l.join("\t")).join("\n"));
+}
+function vLap(){return `<div class="row noprint" style="margin-bottom:10px"><button class="btn" id="prt">طباعة / PDF</button><button class="btn alt" id="cpy">نسخ لجداول Google</button></div><div id="msg" class="mut noprint"></div><div class="card">${report().html}</div>`}
+function vRing(){
+ const ex=S.exp.filter(x=>x.memo===S.sel),A=tot(S.sup),B=tot(S.exp),cats=[...new Set([...CATS,...S.exp.map(x=>x.cat)])];
+ const mx=Math.max(1,...cats.map(c=>tot(S.exp.filter(x=>x.cat===c))));
+ return `<div class="card"><div class="b">جميع المذكرات</div><div class="row"><span>الدعم</span><span>${rp(A)}</span></div><div class="row"><span>المصروفات</span><span>${rp(B)}</span></div><div class="row b ${A-B<0?"neg":""}"><span>الرصيد الباقي</span><span>${rp(A-B)}</span></div></div>
+ <div class="card"><div class="b">المصروفات حسب التصنيف</div>`+cats.map(c=>{const all=tot(S.exp.filter(x=>x.cat===c)),one=tot(ex.filter(x=>x.cat===c));return all?`<div style="margin-top:8px"><div class="row"><span>${L(c)}</span><span>${rp(all)}</span></div><div class="bar"><i style="width:${all/mx*100}%"></i></div><div class="mut">المذكرة المحددة: ${rp(one)}</div></div>`:""}).join("")+`</div>
+ <div class="card noprint"><div class="b">النسخ الاحتياطي</div><p class="mut">البيانات محفوظة على هذا الجهاز فقط. انسخ النص أدناه كنسخة احتياطية، أو الصق نسخة سابقة ثم اضغط «تحميل».</p>
+ <textarea class="bk" dir="ltr" id="bk">${esc(JSON.stringify(S))}</textarea><div class="row" style="margin-top:8px"><button class="btn alt" id="bkc">نسخ</button><button class="btn" id="bkl">تحميل</button><button class="btn red" id="rst">إعادة ضبط</button></div></div>`;
+}
+const TABS=[["memo","📁","المذكرات"],["entri","✏️","تسجيل"],["lap","📄","التقرير"],["ring","📊","الملخص"]];
+function render(){
+ $("#sel").innerHTML=S.memos.map(m=>`<option ${m.id===S.sel?"selected":""}>${esc(m.id)}</option>`).join("")||"<option>(لا توجد مذكرات)</option>";
+ $("#nav").innerHTML=TABS.map(t=>`<button class="${tab===t[0]?"on":""}" data-t="${t[0]}"><div>${t[1]}</div>${t[2]}</button>`).join("");
+ $("#m").innerHTML={memo:vMemo,entri:vEntri,lap:vLap,ring:vRing}[tab]();
+ for(const q of ["#sel","#nav","#m"])$(q).innerHTML=X($(q).innerHTML);
+ $("#m").className=(tab==="memo"||tab==="entri")?"g":"n";$("#inst").textContent=X("تثبيت");
+ document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+ document.title=X("ميزانية المذكرات – كفالة الدعاة");$("#h1").textContent=X("كفالة الدعاة · ميزانية المذكرات");
+ $("#lng").textContent=lang==="ar"?"Indonesia":"العربية";
+ $("#sel").setAttribute("aria-label",X("اختيار المذكرة"));$("#fab").setAttribute("aria-label",X("إضافة"));
+ $("#fab").style.display=tab==="entri"?"block":"none";
+}
+document.addEventListener("click",e=>{
+ const t=e.target.closest("[data-t],[data-pick],[data-edit],[data-sub],#inst,[data-edrow],[data-delrow],[data-delm],[data-row],[data-sec],#lng,#addm,#prt,#cpy,#bkc,#bkl,#rst,#fab");if(!t)return;
+ const d=t.dataset;
+ if(t.id==="inst"){if(deferred){deferred.prompt();deferred=null;$("#inst").hidden=true}}
+ else if(t.id==="lng"){lang=lang==="ar"?"id":"ar";try{localStorage.setItem("kd_lang",lang)}catch(x){}render()}
+ else if(d.t){tab=d.t;render()}
+ else if(d.pick!=null){S.sel=d.pick;save();render()}
+ else if(d.edit!=null)editMemo(S.memos.find(m=>m.id===d.edit));
+ else if(d.sub){sub=d.sub;render()}
+ else if(d.sec!=null)form("تعديل اسم القسم",[{k:"sec",l:"اسم القسم (الداعية / المشرف)"}],{sec:d.sec},o=>{S.exp.forEach(x=>{if(x.memo===S.sel&&(x.sec||"")===d.sec)x.sec=o.sec})},()=>{S.exp=S.exp.filter(x=>!(x.memo===S.sel&&(x.sec||"")===d.sec))});
+ else if(d.edrow)editRow(sub,(sub==="sup"?S.sup:S.exp).find(x=>x.id===d.edrow));
+ else if(d.delrow){if(cf("حذف هذه البيانات؟")){const a=sub==="sup"?S.sup:S.exp;a.splice(a.findIndex(x=>x.id===d.delrow),1);save();render()}}
+ else if(d.delm!=null){if(cf("حذف المذكرة وكل بياناتها؟")){S.memos=S.memos.filter(m=>m.id!==d.delm);S.sup=S.sup.filter(x=>x.memo!==d.delm);S.exp=S.exp.filter(x=>x.memo!==d.delm);if(S.sel===d.delm)S.sel=S.memos[0]?.id||"";save();render()}}
+ else if(d.row)editRow(sub,(sub==="sup"?S.sup:S.exp).find(x=>x.id===d.row));
+ else if(t.id==="addm")editMemo();
+ else if(t.id==="fab"){if(!S.memos.length)return al("أنشئ مذكرة أولاً");editRow(sub)}
+ else if(t.id==="prt")window.print();
+ else if(t.id==="cpy"){const s=tsv();(navigator.clipboard?navigator.clipboard.writeText(s):Promise.reject()).then(()=>{$("#msg").textContent=X("تم النسخ. الصقها في جداول Google (Ctrl+V).")}).catch(()=>{$("#msg").innerHTML=X('انسخ يدويًا: <textarea class="bk" dir="ltr" readonly>'+esc(s)+"</textarea>")})}
+ else if(t.id==="bkc"){const b=$("#bk");b.select();try{navigator.clipboard.writeText(b.value)}catch(x){}}
+ else if(t.id==="bkl"){try{const o=JSON.parse($("#bk").value);if(!o.memos)throw 0;S=o;save();render();al("تم تحميل البيانات")}catch(x){al("صيغة النسخة غير صالحة")}}
+ else if(t.id==="rst"){if(cf("إعادة البيانات إلى المثال؟ ستفقد البيانات الحالية.")){S=seed();save();render()}}
+});
+$("#sel").onchange=e=>{S.sel=e.target.value;save();render()};
+let deferred=null;
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferred=e;$("#inst").hidden=false});
+render();
+if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+</script></body></html>

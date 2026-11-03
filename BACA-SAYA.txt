@@ -1,0 +1,12 @@
+PAKET PWA - Anggaran Memo Kafalah Duat
+Isi: index.html, manifest.webmanifest, sw.js, folder icons/
+
+CARA PASANG (wajib lewat HTTPS)
+1. Unggah SEMUA isi folder ini ke hosting statis, misalnya Netlify Drop (app.netlify.com/drop), GitHub Pages, atau Cloudflare Pages.
+2. Buka alamat situsnya di HP atau laptop.
+3. Android/Chrome & laptop: tekan tombol "Pasang" di pojok atas aplikasi, atau ikon pasang di address bar.
+   iPhone/Safari: tombol Bagikan > "Tambahkan ke Layar Utama".
+4. Setelah terpasang, aplikasi bisa dibuka tanpa internet; data tetap tersimpan di perangkat masing-masing.
+
+Catatan: data tersimpan per perangkat/browser. Gunakan menu Ringkasan > Cadangan data untuk memindahkan data antar perangkat.
+Jika mengubah index.html, naikkan nama cache di sw.js (kafalah-v1 -> kafalah-v2) agar pembaruan terambil.
