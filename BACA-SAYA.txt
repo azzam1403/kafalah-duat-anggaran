@@ -9,6 +9,6 @@ CARA PASANG (wajib lewat HTTPS)
 4. Setelah terpasang, aplikasi bisa dibuka tanpa internet; data tetap tersimpan di perangkat masing-masing.
 
 Catatan: data tersimpan per perangkat/browser. Gunakan menu Ringkasan > Cadangan data untuk memindahkan data antar perangkat.
-Jika mengubah index.html, naikkan nama cache di sw.js (kafalah-v6 -> kafalah-v7) agar pembaruan terambil.
+Jika mengubah index.html, naikkan nama cache di sw.js (kafalah-v8 -> kafalah-v9) agar pembaruan terambil.
 
 PENTING: unggah juga file ".nojekyll" (file kosong, nama diawali titik). Pastikan semua file ada di akar repository.

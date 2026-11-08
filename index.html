@@ -126,7 +126,7 @@ textarea.bk{height:90px;font-size:11px}
  .sheet .sc{position:absolute;left:15mm;right:15mm;top:15mm;background:transparent!important;padding:0!important;max-width:none!important}
  .sheet.kop .sc{left:22mm;right:22mm;top:48mm}
  .sheet .pn{position:absolute;bottom:9mm;left:0;right:0;text-align:center;font-size:11px;color:#000}
- .sheet.kop .pn{bottom:auto;top:262mm;text-align:end;right:22mm;left:auto;color:#333}
+ .sheet.kop .pn{bottom:auto;top:269mm;left:0;right:0;text-align:center;font-size:12px;font-weight:bold;color:#333}
 }
 </style></head>
 <body>
@@ -350,7 +350,7 @@ function paginate(rpt,H,W){
  const out=pages.map(q=>q.innerHTML);host.remove();return out}
 function buildPrint(){const r=document.querySelector("#m .rpt");if(!r||(tab!=="lap"&&tab!=="rek"))return;
  const pg=paginate(r,KOP?205:262,KOP?166:180),n=pg.length,pp=document.createElement("div");pp.id="pp";
- pp.innerHTML=pg.map((h,i)=>`<section class="sheet${KOP?" kop":""}"><div class="sc rpt">${h}</div><div class="pn">${lang==="ar"?`صفحة ${i+1} من ${n}`:`Halaman ${i+1} dari ${n}`}</div></section>`).join("");
+ pp.innerHTML=pg.map((h,i)=>`<section class="sheet${KOP?" kop":""}"><div class="sc rpt">${h}</div>${n>1?`<div class="pn">${i+1}</div>`:""}</section>`).join("");
  document.body.appendChild(pp);document.body.classList.add("pp-on")}
 window.addEventListener("beforeprint",buildPrint);
 window.addEventListener("afterprint",()=>{const p=document.getElementById("pp");if(p)p.remove();document.body.classList.remove("pp-on")});
