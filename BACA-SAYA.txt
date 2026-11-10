@@ -1,14 +1,21 @@
-PAKET PWA - Anggaran Memo Kafalah Duat
-Isi: index.html, manifest.json, sw.js, folder icons/
+PAKET PWA - Anggaran Memo Kafalah Duat (struktur datar, TANPA folder)
 
-CARA PASANG (wajib lewat HTTPS)
-1. Unggah SEMUA isi folder ini ke hosting statis, misalnya Netlify Drop (app.netlify.com/drop), GitHub Pages, atau Cloudflare Pages.
-2. Buka alamat situsnya di HP atau laptop.
-3. Android/Chrome & laptop: tekan tombol "Pasang" di pojok atas aplikasi, atau ikon pasang di address bar.
-   iPhone/Safari: tombol Bagikan > "Tambahkan ke Layar Utama".
-4. Setelah terpasang, aplikasi bisa dibuka tanpa internet; data tetap tersimpan di perangkat masing-masing.
+FILE (semua harus ada di akar repository, sejajar, tanpa subfolder):
+  index.html, manifest.json, sw.js,
+  icon-192.png, icon-512.png, icon-maskable.png, apple-touch-icon.png,
+  cek.html (alat pemeriksa, opsional)
 
-Catatan: data tersimpan per perangkat/browser. Gunakan menu Ringkasan > Cadangan data untuk memindahkan data antar perangkat.
-Jika mengubah index.html, naikkan nama cache di sw.js (kafalah-v11 -> kafalah-v12) agar pembaruan terambil.
+CARA UNGGAH DI GITHUB
+1. Ekstrak zip ini dulu.
+2. Di repository: Add file > Upload files > "choose your files", lalu PILIH SEMUA FILE (Ctrl+A) di folder hasil ekstrak. Tidak ada folder yang perlu diunggah.
+3. Commit changes. Tunggu 1-2 menit sampai Actions berwarna hijau.
+4. Buka  https://azzam1403.github.io/kafalah-duat-anggaran/cek.html  untuk memastikan semua file terbaca.
+5. Hapus file lama yang tidak dipakai lagi (boleh): folder icons, manifest.webmanifest.
 
-PENTING: unggah juga file ".nojekyll" (file kosong, nama diawali titik). Pastikan semua file ada di akar repository.
+CARA PASANG
+- Android: buka alamat utama di Chrome, tunggu beberapa detik, lalu menu (tiga titik) > "Instal aplikasi". Kalau muncul tombol "Pasang" di pojok atas aplikasi, boleh pakai itu.
+- Laptop: ikon pasang di address bar.
+- iPhone: Safari > Bagikan > Tambahkan ke Layar Utama.
+Jika sebelumnya sudah terpasang dengan ikon lama, hapus (uninstall) aplikasi itu lebih dulu lalu pasang ulang.
+
+Saat mengubah index.html: naikkan nama cache di sw.js (kafalah-v13 -> kafalah-v14) supaya perangkat mengambil versi baru.

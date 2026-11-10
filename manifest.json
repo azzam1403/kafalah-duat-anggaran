@@ -1,34 +1,38 @@
 {
  "name": "ميزانية مذكرات كفالة الدعاة",
  "short_name": "Kafalah",
- "id": "/kafalah-duat-anggaran/",
- "start_url": "./index.html",
+ "description": "Pengelolaan anggaran dan laporan memo Kafalah Duat",
+ "id": "./",
+ "start_url": "./",
  "scope": "./",
  "display": "standalone",
  "orientation": "any",
- "background_color": "#f6f8f5",
+ "lang": "ar",
+ "dir": "rtl",
+ "background_color": "#ffffff",
  "theme_color": "#2e7d32",
+ "categories": [
+  "finance",
+  "productivity"
+ ],
  "icons": [
   {
-   "src": "icons/icon-192.png",
+   "src": "icon-192.png",
    "sizes": "192x192",
    "type": "image/png",
    "purpose": "any"
   },
   {
-   "src": "icons/icon-512.png",
+   "src": "icon-512.png",
    "sizes": "512x512",
    "type": "image/png",
    "purpose": "any"
   },
   {
-   "src": "icons/icon-maskable-512.png",
+   "src": "icon-maskable.png",
    "sizes": "512x512",
    "type": "image/png",
    "purpose": "maskable"
   }
- ],
- "description": "Pengelolaan anggaran dan laporan memo Kafalah Duat",
- "lang": "ar",
- "dir": "rtl"
+ ]
 }
